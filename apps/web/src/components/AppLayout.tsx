@@ -6,6 +6,7 @@ const navItems = [
   { to: '/dashboard', label: 'Dashboard' },
   { to: '/miembros', label: 'Miembros' },
   { to: '/cultos', label: 'Cultos' },
+  { to: '/eventos', label: 'Calendario' },
 ];
 
 export function AppLayout() {
@@ -45,6 +46,16 @@ export function AppLayout() {
             </NavLink>
           ))}
         </nav>
+        {church && (
+          <a
+            href={`/iglesia/${church.slug}`}
+            target="_blank"
+            rel="noreferrer"
+            className="mx-3 rounded-lg px-4 py-2.5 text-sm text-white/70 transition hover:bg-white/10 hover:text-white"
+          >
+            Ver perfil público ↗
+          </a>
+        )}
         <button
           onClick={async () => {
             await signOut();

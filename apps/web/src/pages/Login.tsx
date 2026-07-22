@@ -126,9 +126,10 @@ export default function Login() {
         </p>
 
         <p className="mt-4 text-center text-xs text-carbon/40">
-          ¿Tu iglesia aún no está en ChBook?{' '}
-          <Link to="/registro-iglesia" className="text-sage-dark underline">
-            Regístrala aquí
+          ¿Tu iglesia aún no está en ChBook? Crea tu cuenta y el sistema te
+          guiará para registrarla.{' '}
+          <Link to="/" className="text-sage-dark underline">
+            Conoce más
           </Link>
         </p>
       </div>
