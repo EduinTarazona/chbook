@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Paleta oficial ChBook */
+  --sage-dark: #4a6e4a;
+  --sage-light: #8faf8a;
+  --brown: #6b5344;
+  --cream: #ede8dc;
+  --carbon: #2e2e2e;
+  --white: #ffffff;
+}
+
+@layer base {
+  html {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    color: var(--carbon);
+  }
+  h1,
+  h2 {
+    font-family: 'DM Serif Display', serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply rounded-lg bg-sage-dark px-5 py-2.5 font-medium text-white transition hover:opacity-90 disabled:opacity-50;
+  }
+  .btn-secondary {
+    @apply rounded-lg border border-sage-dark px-5 py-2.5 font-medium text-sage-dark transition hover:bg-sage-dark/5 disabled:opacity-50;
+  }
+  .card {
+    @apply rounded-xl bg-cream p-5;
+  }
+  .input {
+    @apply w-full rounded-lg border border-carbon/20 bg-white px-3.5 py-2.5 text-carbon outline-none transition focus:border-sage-dark;
+  }
+  .label {
+    @apply mb-1.5 block text-sm font-medium text-carbon/80;
+  }
+}
