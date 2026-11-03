@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState, type FormEvent } from 'react';
+import { Link } from 'react-router-dom';
 import type { Service } from '@chbook/types';
 import { generateOnlineCode } from '@chbook/utils';
 import { supabase } from '../lib/supabase';
@@ -175,7 +176,14 @@ export default function Services() {
                 const c = counts[s.id] ?? { presential: 0, online: 0 };
                 return (
                   <tr key={s.id} className="border-t border-carbon/5">
-                    <td className="px-4 py-3 font-medium">{s.name}</td>
+                    <td className="px-4 py-3 font-medium">
+                      <Link
+                        to={`/cultos/${s.id}`}
+                        className="text-sage-dark hover:underline"
+                      >
+                        {s.name}
+                      </Link>
+                    </td>
                     <td className="px-4 py-3 text-carbon/60">
                       {s.starts_at
                         ? new Date(s.starts_at).toLocaleString('es-CO', {

@@ -9,7 +9,9 @@ import RegisterChurch from './pages/RegisterChurch';
 import Dashboard from './pages/Dashboard';
 import Members from './pages/Members';
 import Services from './pages/Services';
+import ServiceDetail from './pages/ServiceDetail';
 import Events from './pages/Events';
+import Settings from './pages/Settings';
 
 function Protected({ children }: { children: JSX.Element }) {
   const { session, loading } = useAuth();
@@ -54,7 +56,9 @@ export default function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/miembros" element={<Members />} />
         <Route path="/cultos" element={<Services />} />
+        <Route path="/cultos/:id" element={<ServiceDetail />} />
         <Route path="/eventos" element={<Events />} />
+        <Route path="/configuracion" element={<Settings />} />
       </Route>
 
       <Route path="*" element={<Navigate to="/" replace />} />

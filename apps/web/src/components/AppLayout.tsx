@@ -7,6 +7,7 @@ const navItems = [
   { to: '/miembros', label: 'Miembros' },
   { to: '/cultos', label: 'Cultos' },
   { to: '/eventos', label: 'Calendario' },
+  { to: '/configuracion', label: 'Configuración' },
 ];
 
 export function AppLayout() {
@@ -17,7 +18,14 @@ export function AppLayout() {
 
   return (
     <div className="flex min-h-screen bg-white">
-      <aside className="flex w-60 flex-col bg-sage-dark text-white">
+      <aside
+        className="flex w-60 flex-col bg-sage-dark text-white"
+        style={
+          church?.theme_color
+            ? { backgroundColor: church.theme_color }
+            : undefined
+        }
+      >
         <div className="border-b border-white/10 p-5">
           <div className="[&_span:last-child]:text-white">
             <Logo size="sm" />
